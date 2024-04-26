@@ -41,7 +41,7 @@ public class OnlineStore {
                     System.out.println("3 - Remove product ");
                     System.out.println("4 - return to menu");
                     System.out.println("5 - Exit");
-                    // command = in.nextInt();
+                    command = in.nextInt();
                     break;
                 case 5:
                     return;
@@ -61,17 +61,22 @@ public class OnlineStore {
     private static void addProducts(ArrayList<Product> products) {
         System.out.println("What product do you want to add?");
         String productName = in.nextLine();
+        in.nextLine();
         System.out.println("What is the product id? ");
         int id = in.nextInt();
-        System.out.println("What department is it in?");
-        String department = in.nextLine();
+        in.nextLine();
         System.out.println("What is the price of the product?");
         double price = in.nextDouble();
+        in.nextLine();
+        System.out.println("What department is it in?");
+        String department = in.nextLine();
+        in.nextLine();
         Product product = new Product(id, productName, price, department);
         products.add(product);
+        System.out.println(product);
     }
 
-        private static void displayAllProducts(ArrayList<Product> products) {
+    private static void displayAllProducts(ArrayList<Product> products) {
         for(Product product : products){
             System.out.println(product);
         }
